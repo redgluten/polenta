@@ -7,8 +7,7 @@ Polenta
 2. Installer les dépendances _back-end_ : `composer install`
 3. Installer les dépendances _front-end_ : `npm install`
 4. Produire les éléments _front-end_: `gulp` (Ajouter l’option `--production`  en prod)
-5. Copier `.env.example` vers `.env` et remplir
-6.  la configuration
+5. Copier `.env.example` vers `.env` et remplir la configuration
 
 
 ## Outils de projet
