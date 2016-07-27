@@ -1,0 +1,29 @@
+.admin-footer {
+    background-color: $gray-darker;
+    min-height: 50px;
+    padding: 2rem;
+    text-align: center;
+    color: $gray-light;
+    margin-top: 2rem;
+}
+
+.navbar-footer {
+    display: block;
+    padding: 15px;
+    li {
+        display: inline-block;
+        padding: 0 10px;
+        border-right: 1px solid #444;
+
+        a {
+            color:#999;
+
+            &:hover{
+                color: $brand-primary;
+            }
+        }
+    }
+    li:last-child {
+        border-right: none;
+    }
+}

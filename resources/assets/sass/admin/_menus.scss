@@ -1,0 +1,43 @@
+.menu-page {
+    margin: 4rem 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-page li {
+    list-style-type: none;
+    font-size: 1.5rem;
+    flex-grow: 1;
+    width: 150px;
+    min-height: 90px;
+    text-align: center;
+    margin: 1rem;
+    background: #f9f9f9;
+    padding: 20px 0;
+}
+
+.menu-page li span, .menu-page li i {
+    font-size: 4rem;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+.menu-page li a {
+    color: $gray-darker;
+}
+.menu-page li a:hover {
+    text-decoration: none;
+    color: $brand-primary;
+}
+
+.carousel-inner > .item > a > img {
+    display: block;
+    max-width: 75%;
+    height: auto;
+    line-height: 1;
+    margin: 10px auto 0;
+    border: 1px solid $gray-lighter;
+    padding: 10px 12%;
+    box-shadow: 0 1px 8px 1px rgba(0,0,0,.07);
+}

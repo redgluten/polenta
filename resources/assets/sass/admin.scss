@@ -1,0 +1,44 @@
+/* --------------- Bootstrap --------------- */
+
+@import 'bootstrap';
+
+/* --------------- Font-Awesome --------------- */
+
+$fa-font-path: "../fonts/font-awesome";
+@import 'node_modules/font-awesome/scss/font-awesome.scss';
+
+/* --------------- Wysihtml Editor --------------- */
+
+@import 'wysihtml';
+@import 'toolbar';
+
+/* --------------- Select2CSS --------------- */
+
+@import 'node_modules/select2/src/scss/core.scss';
+
+/* --------------- Components --------------- */
+
+@import 'admin/navbar';
+@import 'admin/breadcrumb';
+@import 'shared/images';
+@import 'admin/menus';
+@import 'admin/forms';
+@import 'shared/up-button';
+@import 'shared/modal';
+
+/* --------------- Layout --------------- */
+
+@import 'admin/layout';
+@import 'admin/footer';
+
+.alert-container {
+    position: fixed;
+    right: 3rem;
+    top: 7rem;
+    z-index: 999999;
+    max-width: 1800px;
+}
+
+.alert {
+    opacity: 0.7;
+}

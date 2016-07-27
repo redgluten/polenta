@@ -1,0 +1,211 @@
+.toolbar .edy-popover {
+        position: absolute;
+        top: 1rem;
+        opacity: 0.9;
+        padding: 1rem;
+}
+
+.edy-tb-menucontainer.createlink .edy-popover, .edy-tb-menucontainer.insert-image .edy-popover {
+        top: 25px;
+}
+
+[data-wysihtml5-command=createLink]+.edy-popover .edy-popover-content, [data-wysihtml5-command=insertImage]+.edy-popover .edy-popover-content {
+        border-radius: 2px !important;
+        overflow: hidden;
+        background: rgba(255,255,255,.95) !important;
+        box-shadow: 0 1px 5px rgba(0,0,0,.5) !important;
+}
+
+[data-wysihtml5-command=createLink]+.edy-popover .edy-tibtn-container, [data-wysihtml5-command=insertImage]+.edy-popover .edy-tibtn-container {
+        position: relative;
+        line-height: 0;
+}
+
+[data-wysihtml5-command=createLink]+.edy-popover input, [data-wysihtml5-command=insertImage]+.edy-popover input {
+        font-weight: 600;
+        width: 100%;
+        min-width: 550px;
+        padding: 15px;
+        margin: 0;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        resize: none;
+        -webkit-appearance: none;
+}
+
+.edy-itempicker .edy-itempicker-input-btns {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        bottom: 6px;
+}
+
+[data-wysihtml5-command=createLink]+.edy-popover button, [data-wysihtml5-command=insertImage]+.edy-popover button {
+        height: 100%;
+        vertical-align: middle;
+        background-color: $brand-primary;
+        padding: 9px 14px;
+        font-weight: 600;
+        line-height: 17px;
+        cursor: pointer;
+        border-radius: 2px;
+        box-sizing: border-box;
+        position: relative;
+        margin: 0;
+        color: #fff;
+        text-align: center;
+        text-shadow: none;
+        border: 0;
+        outline: 0;
+}
+
+.wysiwyg-font-size-smaller {
+    font-size: smaller;
+}
+
+.wysiwyg-font-size-larger {
+    font-size: larger;
+}
+
+.wysiwyg-font-size-xx-large {
+    font-size: xx-large;
+}
+
+.wysiwyg-font-size-x-large {
+    font-size: x-large;
+}
+
+.wysiwyg-font-size-large {
+    font-size: large;
+}
+
+.wysiwyg-font-size-medium {
+    font-size: medium;
+}
+
+.wysiwyg-font-size-small {
+    font-size: small;
+}
+
+.wysiwyg-font-size-x-small {
+    font-size: x-small;
+}
+
+.wysiwyg-font-size-xx-small {
+    font-size: xx-small;
+}
+
+.wysiwyg-color-black {
+    color: black;
+}
+
+.wysiwyg-color-silver {
+    color: silver;
+}
+
+.wysiwyg-color-gray {
+    color: gray;
+}
+
+.wysiwyg-color-white {
+    color: white;
+}
+
+.wysiwyg-color-maroon {
+    color: maroon;
+}
+
+.wysiwyg-color-red {
+    color: red;
+}
+
+.wysiwyg-color-purple {
+    color: purple;
+}
+
+.wysiwyg-color-fuchsia {
+    color: fuchsia;
+}
+
+.wysiwyg-color-green {
+    color: green;
+}
+
+.wysiwyg-color-lime {
+    color: lime;
+}
+
+.wysiwyg-color-olive {
+    color: olive;
+}
+
+.wysiwyg-color-yellow {
+    color: yellow;
+}
+
+.wysiwyg-color-navy {
+    color: navy;
+}
+
+.wysiwyg-color-blue {
+    color: $brand-info;
+}
+
+.wysiwyg-color-teal {
+    color: teal;
+}
+
+.wysiwyg-color-aqua {
+    color: aqua;
+}
+
+.wysiwyg-text-align-right {
+    text-align: right;
+}
+
+.wysiwyg-text-align-center {
+    text-align: center;
+}
+
+.wysiwyg-text-align-left {
+    text-align: left;
+}
+
+.wysiwyg-text-align-justify {
+    text-align: justify;
+}
+
+.wysiwyg-float-left {
+    float: left;
+    margin: 0 8px 8px 0;
+}
+
+.wysiwyg-float-right {
+    float: right;
+    margin: 0 0 8px 8px;
+}
+
+.wysiwyg-clear-right {
+    clear: right;
+}
+
+.wysiwyg-clear-left {
+    clear: left;
+}
+
+.epigraph {
+    border-top: thin dotted $gray-light;
+    border-bottom: thin dotted $gray-light;
+    color: $gray-light;
+    margin-bottom: 20px;
+    text-align: right;
+    font-size: 1.2rem;
+    hyphens: none;
+    padding: 8px 8px 8px 22px;
+}
+
+// POSITIONNEMENT DES IMAGES UPLOADÉES
+img.left {float: left;}
+img.center {margin: 0 auto;}
+img.right {float: right;}

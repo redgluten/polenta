@@ -1,0 +1,60 @@
+.kiosques {
+    text-transform: uppercase;
+    margin: 0 auto 3rem 0;
+    font-size: 4rem;
+
+    a {
+        font-size: 4.75rem;
+        font-family: $font-family-serif;
+        text-transform: none;
+    }
+}
+
+.slogan {
+    margin-top: 0;
+    color: $gray;
+    font-size: 2.5rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.small-article-infos {
+    font-style: italic;
+}
+
+.article-landscape {
+    padding: 0;
+    height: 330px;
+    overflow: hidden;
+    border: 1px solid $gray-lighter;
+    position: relative;
+}
+
+.article-landscape-infos {
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background: linear-gradient(transparent, $gray-darker);
+    color: $gray-lighter;
+
+    h2 {
+        font-size: 4rem;
+    }
+}
+
+.articles-square-container {
+    .media:first-child {
+        padding-bottom: 15px;
+    }
+}
+
+.last-article {
+    border-right: 1px solid $gray-lighter;
+
+    img {
+        margin-right: 2rem;
+    }
+}

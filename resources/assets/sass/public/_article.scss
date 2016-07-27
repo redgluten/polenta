@@ -1,0 +1,221 @@
+$text-column-width: 850px;
+
+@mixin text-size($multiplier: 1) {
+    font-size: 2rem * $multiplier;
+
+    @media (max-width: $container-sm) {
+        font-size: 1.75rem * $multiplier;
+    }
+}
+
+@mixin content-spacing {
+    max-width: $text-column-width;
+    margin: auto;
+}
+
+.article {
+    font-family: $font-family-serif;
+    margin: auto;
+}
+
+.article-title {
+    font-size: 7rem;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+
+    @media (max-width: $container-sm) {
+        font-size: 5rem;
+    }
+}
+
+.article-chapeau {
+    @include content-spacing;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+
+    @media (max-width: $container-sm) {
+        font-size: 2rem;
+    }
+}
+
+.article-infos {
+    @include content-spacing;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 1rem;
+}
+
+.article-figure {
+    @include content-spacing;
+    margin-bottom: 3rem;
+
+    img {
+        width: 100%;
+    }
+
+    figcaption {
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        padding: 1rem;
+    }
+}
+
+// When the logo has a landscape ratio
+// makes the article figure cover all the width
+.landscape {
+    max-width: 100%;
+}
+
+// When the logo has a portrait ratio the article
+// figure should have the same width as the content and
+// the logo itself should be floating on the right of the text
+.portrait {
+    max-width: 90%;
+
+    img {
+        float: right;
+        max-width: 50%;
+        margin-left: 2rem;
+    }
+
+    @media (max-width: $container-sm) {
+        img {
+            max-width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.article-content {
+    margin-top: 2rem;
+
+    p, h1, h2, h3, h4, blockquote, ul {
+        @include content-spacing;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: $font-family-sans-serif;
+        margin-top: 2rem;
+    }
+
+    p {
+        @include text-size;
+
+        &:first-of-type::first-letter {
+            float: left;
+            font-size: 10rem;
+            margin-right: 2rem;
+            font-weight: 500;
+            line-height: 9rem;
+            margin-top: -0.1rem;
+        }
+    }
+
+    ul {
+        margin-top: 1rem;
+
+        li {
+            @include text-size;
+            list-style-type: square;
+        }
+    }
+
+    blockquote {
+        border: 0;
+        padding-left: 2.5%;
+        background: url('../images/quote.png') no-repeat;
+        background-size: 80px;
+
+        p {
+            font-style: italic;
+
+            &:first-of-type::first-letter {
+                float: none;
+                font-size: 1.75rem;
+                margin: 0;
+                font-weight: normal;
+                line-height: 1;
+                color: inherit;
+            }
+        }
+    }
+
+    * + p {
+        margin-top: 2rem;
+    }
+
+    &:first-child {
+        font-size: 5rem;
+    }
+
+    .epigraph {
+        @include text-size(1.1);
+        border-top: thin dotted $gray-light;
+        border-bottom: thin dotted $gray-light;
+        color: $gray-light;
+        margin-bottom: 20px;
+        text-align: right;
+        hyphens: none;
+        padding: 8px 8px 8px 22px;
+    }
+}
+
+.same-issue {
+
+    .issue {
+        margin-bottom: 3rem;
+    }
+
+    figure img {
+        max-width: 200px;
+    }
+}
+
+.similars {
+
+}
+
+.similar {
+    flex: 1;
+    padding: 1.5rem;
+    max-width: 600px;
+    border-right: 1px solid $gray-lighter;
+    margin-top: 0;
+
+    &:last-child {
+        border: none;
+    }
+
+    @media screen and (max-width: 700px) {
+        padding: 0;
+        margin-top: 2rem;
+        border-right: none;
+        border-bottom: 1px solid gray;
+
+        .media-object {
+            margin: auto;
+        }
+
+        .media-left, .media-body {
+            display: block;
+        }
+
+        .media-heading {
+            margin-top: 2rem;
+        }
+    }
+}
+
+.clipboard {
+    cursor: pointer;
+    float: right;
+
+    @media (max-width: $screen-md) {
+        float: none;
+        &:before {
+            content: ' ・ ';
+        }
+    }
+}

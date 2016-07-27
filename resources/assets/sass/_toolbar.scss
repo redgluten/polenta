@@ -1,0 +1,47 @@
+.toolbar {
+    background: $gray-lighter;
+    color: $gray-darker;
+    margin-bottom: 1rem;
+    width: auto;
+}
+
+/* divs */
+.edy-tb-menucontainer {
+    display: inline;
+}
+
+/* Insert links */
+.edy-popover {
+    position: absolute;
+    top: 1rem;
+    opacity: 0.7;
+    padding: 1rem;
+}
+
+/* Buttons */
+.edy-tb-cmd {
+    border: none;
+    background-color: transparent;
+    vertical-align: middle;
+    width: 4rem;
+    padding: 1rem;
+
+    &:hover {
+        background-color: $gray-darker;
+        color: $gray-lighter;
+    }
+
+    &:active {
+        background-color: lighten($gray-darker, 10%);
+    }
+}
+
+.wysihtml5-command-active {
+    background: $gray-dark;
+    color: $gray-lighter;
+}
+
+.editor-separator {
+    color: $gray;
+    margin: 0 2%;
+}

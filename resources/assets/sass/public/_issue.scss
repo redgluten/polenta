@@ -1,0 +1,43 @@
+.issue {
+
+    .title {
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+
+    .issue-infos {
+        padding: 1rem;
+        background-color: $gray-lighter;
+    }
+
+    figure {
+        margin-bottom: 1rem;
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+        }
+    }
+
+    .editorial {
+        font-family: $font-family-serif;
+
+        h1 {
+            margin-top: -1rem;
+        }
+
+        .content {
+            font-size: 2rem;
+        }
+    }
+}
+
+.issue-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $container-md) {
+        flex-direction: column;
+    }
+}

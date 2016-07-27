@@ -1,0 +1,51 @@
+// Alternative Flexbox-layout
+// ==========================
+.grid-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media screen and (max-width: 750px) {
+        flex-direction: column;
+    }
+}
+
+.grid-column {
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+// Spacings
+// ========
+
+.public-content.container {
+    margin-top: 8rem;
+}
+
+.public-content.container-fluid {
+    margin-top: 7rem;
+    padding: 0;
+}
+
+// Especially useful for articles with non-landscape logos
+.public-content.container-fluid + .public-content.container {
+    margin-top: 0;
+}
+
+// Vertical space between columns when stacked
+@media (max-width: $container-sm) {
+    [class*="col-"]:not(:first-child) {
+        margin-top: 3rem;
+    }
+}
+
+// Alerts
+// ======
+
+.alert {
+    position: fixed;
+    top: 8%;
+    right: 1%;
+    width: 300px;
+    z-index: 9999;
+}

@@ -1,0 +1,124 @@
+.articles {
+    .article + .article {
+        margin-top: 4rem;
+    }
+
+    .article {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-right: 2px solid $gray;
+        border-bottom: 2px solid $gray;
+        color: $link-color;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+
+        .content {
+            margin: 0 1rem 0 0;
+        }
+
+        h3 {
+            font-family: $font-family-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        p {
+            font-family: $font-family-sans-serif;
+            color: $gray;
+            margin: 0;
+        }
+
+        img {
+            height: 95px;
+            width: 95px;
+        }
+
+        // Transformations on hover
+        &:hover {
+            text-decoration: none;
+            color: $link-hover-color;
+
+            p {
+                color: $gray-darker;
+            }
+
+            img {
+                filter: grayscale(100%);
+            }
+        }
+    }
+}
+
+.articles-grid {
+
+    .article {
+        min-height: 450px;
+
+        // Remove min-height when
+        @media (max-width: $container-md) {
+            .article {
+                min-height: inherit;
+            }
+        }
+
+        .content {
+            margin: 0;
+        }
+
+        .infos {
+            margin-top: -0.5rem;
+            padding-bottom: 0.5rem;
+            width: 100%;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-family: $font-family-sans-serif;
+        }
+
+        h3 {
+            border-bottom: 1px solid black;
+            font-family: $font-family-serif;
+            padding-bottom: 1rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        p {
+            font-family: $font-family-sans-serif;
+            color: $gray;
+            margin: 0;
+
+            span {
+                color: $link-color;
+                font-size: 120%;
+            }
+        }
+
+        img {
+            height: auto;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        // Transformations on hover
+        &:hover {
+            text-decoration: none;
+            color: $link-hover-color;
+
+            span {
+                color: $link-hover-color;
+                font-weight: bold;
+            }
+
+            p {
+                color: $gray-darker;
+            }
+
+            img {
+                filter: grayscale(100%);
+            }
+        }
+    }
+}

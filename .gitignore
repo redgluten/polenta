@@ -1,0 +1,30 @@
+# Laravel stuff
+/bootstrap/compiled.php
+/vendor
+composer.phar
+.env.*.php
+.env.php
+.env
+resources/views/vendor
+
+# System
+.DS_Store
+Thumbs.db
+
+# Other
+node_modules/
+*.scssc
+sassdoc
+
+# Backups
+storage/backups
+storage/laravel-backups
+
+# Public
+public/uploads/
+public/css/
+public/fonts/
+public/js/
+public/vendor/
+public/images/
+
