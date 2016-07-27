@@ -56,11 +56,12 @@ Polenta
 #### Fontes
 
 La super-famille de fontes __Alegreya__ est utilisée dans ses variantes _open-source_ en cohérence avec les choix opérés pour la version papier du magazine, se reporter aux descriptions des familles concernant les versions commerciales pour plus d’informations sur l’approche générale de celles-ci :
-    - [Sans-serif](http://www.huertatipografica.com/en/fonts/alegreya-sans-ht)
-    - [Serif](http://www.huertatipografica.com/en/fonts/alegreya-ht-pro)
+- [Sans-serif](http://www.huertatipografica.com/en/fonts/alegreya-sans-ht)
+- [Serif](http://www.huertatipografica.com/en/fonts/alegreya-ht-pro)
+
 Les dépôts des versions open-sources utilisés ici :
-    - [Sans-serif](https://github.com/huertatipografica/Alegreya-Sans)
-    - [Serif](https://github.com/huertatipografica/Alegreya-libre)
+- [Sans-serif](https://github.com/huertatipografica/Alegreya-Sans)
+- [Serif](https://github.com/huertatipografica/Alegreya-libre)
 
 
 ---
