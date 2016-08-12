@@ -81,31 +81,20 @@
         </div>
     </article>
 
-    <hr>
+</div>
 
-    <aside class="row same-issue" id="same-issue">
+<div class="same-issue-container container-fluid">
 
-        <h2 class="text-center subtitle">Dans le même numéro</h2>
+    <section class="row same-issue" id="same-issue">
+
+        <h2 class="text-center subtitle">Également dans <a href="{{ route('issue.show', $article->issue->id) }}">Polenta {{ $article->issue->title }}</a></h2>
 
         <div class="articles-grid same-issue-articles">
             @each ('articles._presentation-grid', $article->issue->articles, 'article', ['class' => 'multiple-items'])
         </div>
 
-    </aside>
+    </section>
 
-    @unless ($similars->isEmpty())
-
-    <hr>
-
-    <aside class="similars row">
-
-        <h2 class="text-center subtitle">Articles similaires</h2>
-
-        <div class="articles-grid">
-            @each ('articles._presentation-grid', $similars, 'article')
-        </div>
-    </aside>
-    @endunless
 </div>
 
 @stop
@@ -122,7 +111,7 @@
 $('.same-issue-articles').slick({
     dots: true,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 3,
     responsive: [
         {
             breakpoint: 1200,

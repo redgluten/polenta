@@ -22,14 +22,13 @@ class ArticlesPublicController extends Controller
     {
         $article = $this->getByIdOrUrl($id);
 
-        $similars = $this->getSimilarArticles($article, 3);
         $tagsCloud = Cache::remember('tagsCloud', 300, function() {
             return Tag::getCloud();
         });
 
         event(new ArticleWasRead($article));
 
-        return view('articles.show', compact('article', 'similars'));
+        return view('articles.show', compact('article'));
     }
 
     /**
