@@ -8,7 +8,7 @@
 
 @unless (empty($article->logo_color))
     <style type="text/css">
-        .article-title, .article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6, .article-content p:first-of-type::first-letter, .article-content .epigraph {
+        .article-title, .article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6, .article-content p:first-of-type::first-letter, .article-content .epigraph, .aside::before, .aside h1, .aside h2 {
             color: {{ $article->logo_color }};
             border-color: {{ $article->logo_color }};
         }
@@ -67,16 +67,18 @@
 
             {!! $article->content !!}
 
-            @unless (empty($article->aside1))
-                <hr>
+        </div>
 
-                {!! $article->aside1 !!}
+            @unless (empty($article->aside1))
+                <div class="aside aside1" style="border-color: {{ $article->logo_color }};">
+                    {!! $article->aside1 !!}
+                </div>
             @endunless
 
             @unless (empty($article->aside2))
-                <hr>
-
-                {!! $article->aside2 !!}
+                <div class="aside aside2" style="border-color: {{ $article->logo_color }};">
+                    {!! $article->aside2 !!}
+                </div>
             @endunless
         </div>
     </article>
