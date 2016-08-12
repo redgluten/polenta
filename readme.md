@@ -44,12 +44,12 @@ Polenta
 > **Note :** [NPM](https://www.npmjs.com) est utilisé pour la gestion des dépendances front-end. La liste complète des dépendances doit donc se trouver dans le fichier `/.package.json` à la racine du projet. La liste suivante devrait cependant être tenue à jour pour rappeler l’utilité de chacune d’entre elles et fournir un lien vers son éventuelle documentation.
 
 - [Elixir](http://laravel.com/docs/5.1/elixir) qui est une surcouche de [Gulp](http://gulpjs.com) est utilisé pour traiter les assets CSS, JS et autres, notamment :
-    - Le code CSS est généré à l’aide de [Sass](http://sass-lang.com) et d’Autoprefixer, concaténé et minifé le cas échéant
-    - Le code JS est testé avec JSHint, concaténé et minifé le cas échéant
+    - Le code CSS est généré à l’aide de [Sass](http://sass-lang.com) et d’Autoprefixer, concaténé et minifié le cas échéant
+    - Le code JS est testé avec JSHint, concaténé et minifié le cas échéant
 - [Bootstrap 3](http://getbootstrap.com) Framework CSS, version Sass
 - [Select2](https://github.com/select2/select2) améliore les `<select>`
 - [wysihtml](https://github.com/Voog/wysihtml) éditeur HTML
-- [Font Awesome](http://fontawesome.io) icônes d’înterface
+- [Font Awesome](http://fontawesome.io) icônes d’interface
 - [Clipboard.js](https://clipboardjs.com) pour copier vers le presse-papier
 - [Slick](https://github.com/kenwheeler/slick/) carousel
 
