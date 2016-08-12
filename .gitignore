@@ -6,6 +6,7 @@ composer.phar
 .env.php
 .env
 resources/views/vendor
+/Envoy.blade.php
 
 # System
 .DS_Store
