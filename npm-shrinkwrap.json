@@ -6256,6 +6256,11 @@
       "from": "slash@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/slash/-/slash-1.0.0.tgz"
     },
+    "slick-carousel": {
+      "version": "1.6.0",
+      "from": "slick-carousel@latest",
+      "resolved": "https://registry.npmjs.org/slick-carousel/-/slick-carousel-1.6.0.tgz"
+    },
     "sntp": {
       "version": "1.0.9",
       "from": "sntp@>=1.0.0 <2.0.0",

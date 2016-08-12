@@ -51,6 +51,7 @@ Polenta
 - [wysihtml](https://github.com/Voog/wysihtml) éditeur HTML
 - [Font Awesome](http://fontawesome.io) icônes d’înterface
 - [Clipboard.js](https://clipboardjs.com) pour copier vers le presse-papier
+- [Slick](https://github.com/kenwheeler/slick/) carousel
 
 #### Fontes
 

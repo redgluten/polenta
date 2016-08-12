@@ -87,8 +87,8 @@
 
         <h2 class="text-center subtitle">Dans le même numéro</h2>
 
-        <div class="articles-grid">
-            @each ('articles._presentation-grid', $article->issue->articles, 'article')
+        <div class="articles-grid same-issue-articles">
+            @each ('articles._presentation-grid', $article->issue->articles, 'article', ['class' => 'multiple-items'])
         </div>
 
     </aside>
@@ -110,8 +110,48 @@
 
 @stop
 
+@push('styles')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/article.css') }}">
+@endpush
+
 @push('scripts')
+<script type="text/javascript" src="{{ asset('js/article.js') }}"></script>
+
 <script type="text/javascript">
+
+$('.same-issue-articles').slick({
+    dots: true,
+    infinite: true,
+    slidesToShow: 4,
+    responsive: [
+        {
+            breakpoint: 1200,
+            settings: {
+                dots: true,
+                infinite: true,
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 992,
+            settings: {
+                dots: true,
+                infinite: true,
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                dots: true,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 1,
+            }
+        }
+    ]
+});
+
 $(document).ready(function () {
     espaceFine($('.article'));
 })

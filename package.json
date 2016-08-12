@@ -12,6 +12,7 @@
     "jquery": "^3.1.0",
     "laravel-elixir": "^4.0.0",
     "select2": "^4.0.2-rc.1",
+    "slick-carousel": "^1.6.0",
     "wysihtml": "^0.5.5"
   }
 }

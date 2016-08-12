@@ -20,12 +20,14 @@ var paths = {
     'editor': 'node_modules/wysihtml/',
     'fontawesome': 'node_modules/font-awesome/',
     'clipboard': 'node_modules/clipboard/',
-    'espacefine': 'node_modules/espacefine/'
+    'espacefine': 'node_modules/espacefine/',
+    'slick': 'node_modules/slick-carousel/slick/',
 }
 
 elixir(function(mix) {
     mix.sass('app.scss');
     mix.sass('admin.scss');
+    mix.sass('article.scss');
     mix.sass('editor.scss');
 
     // App
@@ -33,10 +35,17 @@ elixir(function(mix) {
         [
             paths.jquery + 'dist/jquery.js',
             paths.bootstrap + 'assets/javascripts/bootstrap.js',
-            paths.clipboard + 'dist/clipboard.js',
             paths.espacefine + 'src/espacefine.js',
             'resources/assets/js/app.js'
         ], 'public/js/app.js', './'
+    );
+
+    // Article page
+    mix.scripts(
+        [
+            paths.clipboard + 'dist/clipboard.js',
+            paths.slick + 'slick.js'
+        ], 'public/js/article.js', './'
     );
 
     // Admin
