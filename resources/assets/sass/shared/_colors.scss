@@ -13,7 +13,7 @@ $brand-primary:         #F14F3D !default; // #337ab7
 $brand-success:         #5cb85c !default;
 $brand-info:            #7DCED3 !default;
 $brand-warning:         #f0ad4e !default;
-$brand-danger:          #632C21 !default;
+$brand-danger:          darken($brand-primary, 14%);
 
 $main-background-color: #FFFBF7;
 $main-background-contrast-color: #642828;
