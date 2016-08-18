@@ -10,17 +10,15 @@ Les copain-ines
 @stop
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <aside class="col-md-2 sidebar">
-            @include('admin.partials._nav-aside')
-
             <h3>Actions</h3>
             @include('admin.partials._add-resource', ['url' => route('admin.friend.create'), 'text' => 'Nouveau copain'])
         </aside>
 
         <div class="col-md-10 main">
-            <h1>Copains</h1>
+            <h1 class="subtitle">Copains</h1>
 
             <div class="table-responsive">
                 <table class="table table-striped">

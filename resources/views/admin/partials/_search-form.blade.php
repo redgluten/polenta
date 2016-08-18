@@ -2,6 +2,7 @@
     'method' => 'POST',
     'route'  => 'admin.search',
     'role'   => 'search',
+    'class'  => 'clearfix',
 ]) !!}
 
     <h3>Recherche</h3>
@@ -18,14 +19,14 @@
         <small class="text-danger">{{ $errors->first('search') }}</small>
     </div>
 
-    {!! Form::submit('Rechercher', ['class' => 'btn btn-success pull-right']) !!}
+    <button type="submit" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i> Rechercher</button>
 
 {!! Form::close() !!}
 
 @push('scripts')
     <script type="text/javascript">
         $('#issue_list').select2({
-            placeholder: 'Sélectionnez un ou plusieurs numéro(s)',
+            placeholder: 'Lesquel(s) ?',
             allowClear: true
         });
     </script>

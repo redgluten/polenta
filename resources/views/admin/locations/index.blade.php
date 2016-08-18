@@ -13,14 +13,12 @@ Tous les lieux de distribution
 <div class="container-fluid">
     <div class="row">
         <aside class="col-md-2 sidebar">
-            @include('admin.partials._nav-aside')
-
             <h3>Actions</h3>
             @include('admin.partials._add-resource', ['url' => route('admin.location.create'), 'text' => 'Nouveau lieu'])
         </aside>
 
         <div class="col-md-10 main">
-            <h1>Lieux de distributions</h1>
+            <h1 class="subtitle">Lieux de distributions</h1>
 
             <div class="table-responsive">
                 <table class="table table-striped">

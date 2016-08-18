@@ -13,15 +13,13 @@ Les pages
 <div class="container-fluid">
 
     <div class="row">
-        <aside class="col-sm-3 sidebar">
-            @include('admin.partials._nav-aside')
-
+        <aside class="col-sm-2 sidebar">
             <h3>Actions</h3>
             @include('admin.partials._add-resource', ['url' => route('admin.page.create'), 'text' => 'Ajouter une page'])
         </aside>
 
-        <div class="col-md-9">
-            <h1 class="title"><span aria-hidden="true"><i class="fa fa-file-o"></i></span> @yield('title')</h1>
+        <div class="col-md-10">
+            <h1 class="subtitle"><span aria-hidden="true"><i class="fa fa-file-o"></i></span> @yield('title')</h1>
 
             <!-- pages index -->
             <div class="table-responsive">

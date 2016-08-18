@@ -12,15 +12,13 @@ Tous les numéros
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <aside class="col-sm-3 sidebar">
-            @include('admin.partials._nav-aside')
-
+        <aside class="col-sm-2 sidebar">
             <h3>Actions</h3>
             @include('admin.partials._add-resource', ['url' => route('admin.issue.create'), 'text' => 'Nouveau numéro'])
         </aside>
 
-        <div class="col-sm-9 main">
-            <h1>@yield('title')</h1>
+        <div class="col-sm-10 main">
+            <h1 class="subtitle">@yield('title')</h1>
 
             <div class="table-responsive">
                 <table class="table table-striped">

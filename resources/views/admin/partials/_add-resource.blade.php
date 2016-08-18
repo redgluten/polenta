@@ -1,3 +1,3 @@
 <a href="{{ $url }}" class="{{ $class or 'btn btn-success' }}">
-    <span aria-hidden="true"><i class="fa fa-plus"></i></span> {{ $text }}
+    <i class="fa fa-plus-square-o" aria-hidden="true"></i> {{ $text }}
 </a>
