@@ -63,7 +63,16 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('search', ['as' => 'admin.search', 'uses' => 'ArticlesAdminController@search']);
 
         Route::resource('friend', 'FriendsAdminController');
+
+        // Articles
         Route::resource('article', 'ArticlesAdminController');
+
+        Route::get('trash', ['as' => 'admin.article.trash', 'uses' => 'ArticlesAdminController@trash']);
+
+        Route::get('drafts', ['as' => 'admin.article.drafts', 'uses' => 'ArticlesAdminController@drafts']);
+        Route::post('article/{article}/untrash', ['as' => 'admin.article.untrash', 'uses' => 'ArticlesAdminController@unTrash']);
+
+
         Route::resource('issue', 'IssuesAdminController');
         Route::resource('page', 'PagesAdminController');
         Route::resource('location', 'LocationsAdminController');

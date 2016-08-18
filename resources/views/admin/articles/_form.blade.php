@@ -1,3 +1,17 @@
+@include('partials._forms-errors')
+
+<hr>
+
+<div class="form-group">
+    <div class="checkbox{{ $errors->has('draft') ? ' has-error' : '' }}">
+        <label for="draft">
+            {!! Form::checkbox('draft', '1', null, ['id' => 'draft']) !!} Brouillon<br>
+            <small class="text-muted">Les brouillons ne sont pas visibles publiquement</small>
+        </label>
+    </div>
+    <small class="text-danger">{{ $errors->first('draft') }}</small>
+</div>
+
 <hr>
 
 <p class="text-muted">Les champs suivis d’une astérique (*) sont obligatoires.</p>

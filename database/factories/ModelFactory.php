@@ -27,6 +27,7 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
         'content' => implode('\n', $faker->paragraphs),
         'issue_id' => factory(App\Issue::class)->create()->id,
         'reads'    => $faker->numberBetween(0, 3680),
+        'draft'    => false,
     ];
 });
 

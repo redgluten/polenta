@@ -49,6 +49,7 @@ class SaveArticleRequest extends Request
             'logo_caption' => 'string|max:255',
             'user_list'    => 'array',
             'tag_list'     => 'array',
+            'draft'        => 'boolean',
         ];
 
         // Exclude existing model from uniqueness validation on PUT

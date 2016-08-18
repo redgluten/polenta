@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Tous les articles
+Corbeille
 @stop
 
 @section('breadcrumb')
@@ -22,12 +22,12 @@ Tous les articles
 
             <hr>
 
-            @include('admin.articles._folders', ['active' => 'index'])
+            @include('admin.articles._folders', ['active' => 'trash'])
         </aside>
 
         <div class="col-md-10 main">
-            @if (! $articles->isEmpty())
-                <h1 class="subtitle">Articles</h1>
+            @if (! $trashedArticles->isEmpty())
+                <h1 class="subtitle">@yield('title')</h1>
 
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -37,11 +37,10 @@ Tous les articles
                                 <th>Title</th>
                                 <th>Numéro</a></th>
                                 <th>Modifier</th>
-                                <th>Corbeille</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($articles as $article)
+                            @foreach ($trashedArticles as $article)
                             <tr>
                                 <th>
                                     <img src="{{ asset('uploads/thumb_' . $article->logo_or_placeholder) }}" class="img-thumbnail small-thumb" alt="{{ $article->title }}">
@@ -52,11 +51,9 @@ Tous les articles
                                 <td>{{ $article->issue->title }}</td>
 
                                 <td class="text-center">
-                                    @include('admin.partials._edit-button', ['url' => route('admin.article.edit', $article->id)])
-                                </td>
-
-                                <td class="text-center">
-                                    @include('admin.partials._delete-button', ['id' => $article->id, 'text' => 'Êtes-vous sur de vouloir déplacer l’article ' . $article->title . ' vers la corbeille ?', 'url' => route('admin.article.destroy', $article->id)])
+                                    {!! Form::open(['url' => route('admin.article.untrash', $article)]) !!}
+                                        <button type="submit" id="untrash-{{ $article->id }}" class="btn btn-info"><i class="fa fa-file-o" aria-hidden="true"></i> Convertir en brouillon</button>
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                             @endforeach
@@ -64,14 +61,11 @@ Tous les articles
                     </table>
                 </div>
 
-                {!! $articles->links() !!}
+                {!! $trashedArticles->links() !!}
             @else
                 <div class="jumbotron text-center">
-                    <h1><i class="fa fa-file-text-o" aria-hidden="true"></i> Vide</h1>
-                    <p>
-                        Il n’y a aucun article publié pour pour le moment<br>
-                        @include('admin.partials._add-resource', ['url' => route('admin.article.create'), 'text' => 'Nouvel article'])
-                    </p>
+                    <h1><i class="fa fa-trash" aria-hidden="true"></i> Vide</h1>
+                    <p>Il n’y a actuellement aucun article à la corbeille.</p>
                 </div>
             @endif
         </div>

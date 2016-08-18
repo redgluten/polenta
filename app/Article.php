@@ -3,12 +3,12 @@
 namespace App;
 
 use Carbon\Carbon;
-use Spatie\Feed\FeedItem;
 use Conner\Tagging\Taggable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Feed\FeedItem;
 
 class Article extends Model implements FeedItem
 {
@@ -122,6 +122,35 @@ class Article extends Model implements FeedItem
         return $query->orderBy('reads', 'desc');
     }
 
+    /**
+     * Scope a query to not return drafts
+     * @param  QueryBuilder $query
+     * @return QueryBuilder
+     */
+    public function scopeNoDrafts($query)
+    {
+        return $query->whereDraft(false);
+    }
+
+    /**
+     * Scope a query to return draft articles
+     * @param  QueryBuilder $query
+     * @return QueryBuilder
+     */
+    public function scopeDrafts($query)
+    {
+        return $query->whereDraft(true);
+    }
+
+    /**
+     * Scope a query to filter out drafts
+     * @param  QueryBuilder $query
+     * @return QueryBuilder
+     */
+    // public function scopeNoDrafts($query)
+    // {
+    //     return $query->whereDraft(false);
+    // }
 
     // Attributes
     // ==========

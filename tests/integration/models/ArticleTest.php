@@ -20,6 +20,48 @@ class ArticleTest extends TestCase
     }
 
     /** @test */
+    function index_should_not_display_drafts()
+    {
+        $admin = $this->getAdminUser();
+        $article = factory(Article::class)->create();
+        $article->draft = true;
+        $article->save();
+        $this->actingAs($admin)
+             ->visit(route('admin.article.index'))
+             ->dontSee($article->title);
+    }
+
+    /** @test */
+    function drafts()
+    {
+        $admin = $this->getAdminUser();
+        $this->actingAs($admin)
+             ->visit(route('admin.article.drafts'))
+             ->seePageIs('/admin/drafts')
+             ->see('Brouillons');
+    }
+
+    /** @test */
+    function drafts_should_not_display_published_articles()
+    {
+        $admin = $this->getAdminUser();
+        $article = factory(Article::class)->create();
+        $this->actingAs($admin)
+             ->visit(route('admin.article.drafts'))
+             ->dontSee($article->title);
+    }
+
+    /** @test */
+    function trash()
+    {
+        $admin = $this->getAdminUser();
+        $this->actingAs($admin)
+             ->visit(route('admin.article.trash'))
+             ->seePageIs('/admin/trash')
+             ->see('Corbeille');
+    }
+
+    /** @test */
     function create_new_article()
     {
         $admin   = $this->getAdminUser();
@@ -69,8 +111,23 @@ class ArticleTest extends TestCase
              ->seePageIs('/admin/article/')
              ->see($article->title)
              ->click('modal-delete-' . $article->id)
-             ->see('Êtes-vous sur de vouloir supprimer l’article ' . $article->title . ' ?')
+             ->see('Êtes-vous sur de vouloir déplacer l’article ' . $article->title . ' vers la corbeille ?')
              ->press('delete-resource-' . $article->id)
              ->see('L’article ' . $article->title . ' a bien été déplacé dans la corbeille');
+    }
+
+    /** @test */
+    function untrash()
+    {
+        $admin = $this->getAdminUser();
+        $article = factory(Article::class)->create();
+        $article->delete();
+        $this->actingAs($admin)
+            ->visit(route('admin.article.trash'))
+            ->seePageIs('/admin/trash')
+            ->see($article->title)
+            ->press('untrash-' . $article->id)
+            ->seePageIs('/admin/drafts')
+            ->see('L’article ' . $article->title . ' a été converti en brouillon');
     }
 }

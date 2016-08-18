@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Tous les articles
+Brouillons
 @stop
 
 @section('breadcrumb')
@@ -22,12 +22,12 @@ Tous les articles
 
             <hr>
 
-            @include('admin.articles._folders', ['active' => 'index'])
+            @include('admin.articles._folders', ['active' => 'drafts'])
         </aside>
 
         <div class="col-md-10 main">
-            @if (! $articles->isEmpty())
-                <h1 class="subtitle">Articles</h1>
+            @if (! $drafts->isEmpty())
+                <h1 class="subtitle">@yield('title')</h1>
 
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -41,7 +41,7 @@ Tous les articles
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($articles as $article)
+                            @foreach ($drafts as $article)
                             <tr>
                                 <th>
                                     <img src="{{ asset('uploads/thumb_' . $article->logo_or_placeholder) }}" class="img-thumbnail small-thumb" alt="{{ $article->title }}">
@@ -64,15 +64,15 @@ Tous les articles
                     </table>
                 </div>
 
-                {!! $articles->links() !!}
+                {!! $drafts->links() !!}
             @else
-                <div class="jumbotron text-center">
-                    <h1><i class="fa fa-file-text-o" aria-hidden="true"></i> Vide</h1>
-                    <p>
-                        Il n’y a aucun article publié pour pour le moment<br>
-                        @include('admin.partials._add-resource', ['url' => route('admin.article.create'), 'text' => 'Nouvel article'])
-                    </p>
-                </div>
+            <div class="jumbotron text-center">
+                <h1><i class="fa fa-file-o" aria-hidden="true"></i> Vide</h1>
+                <p>
+                    Il n’y a aucun brouillon pour pour le moment.<br>
+                    @include('admin.partials._add-resource', ['url' => route('admin.article.create'), 'text' => 'Nouvel article'])
+                </p>
+            </div>
             @endif
         </div>
     </div>

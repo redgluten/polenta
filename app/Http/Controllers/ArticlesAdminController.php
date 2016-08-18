@@ -2,28 +2,61 @@
 
 namespace App\Http\Controllers;
 
-use Cache;
-use App\User;
-use App\Issue;
 use App\Article;
-use App\Http\Requests;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use App\Http\Requests\SaveArticleRequest;
+use App\Issue;
+use App\Scopes\NoDraftScope;
+use App\User;
+use Cache;
+use Illuminate\Http\Request;
 
 class ArticlesAdminController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * List published articles
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $articles = Article::orderBy('created_at', 'desc')->with('issue')->paginate(5);
-        $issues   = Issue::all()->pluck('title', 'id');
+        $articles = Article::noDrafts()->orderBy('created_at', 'desc')->with('issue')->paginate(5);
+        $trashArticlesCount = Article::onlyTrashed()->count();
+        $draftsCount = Article::drafts()->count();
+        $issues = Issue::all()->pluck('title', 'id');
 
-        return view('admin.articles.index', compact('articles', 'issues'));
+        return view('admin.articles.index', compact('articles', 'issues', 'trashArticlesCount', 'draftsCount'));
+    }
+
+    /**
+     * List trashed articles
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function trash()
+    {
+        $trashedArticles = Article::onlyTrashed()->orderBy('created_at', 'desc')->with('issue')->paginate(5);
+        $trashArticlesCount = Article::onlyTrashed()->count();
+        $draftsCount = Article::drafts()->count();
+        $issues = Issue::all()->pluck('title', 'id');
+
+        return view('admin.articles.trash', compact('trashedArticles', 'issues', 'trashArticlesCount', 'draftsCount'));
+    }
+
+    /**
+     * List draft articles
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function drafts()
+    {
+        $drafts = Article::drafts()->orderBy('created_at', 'desc')->with('issue')->paginate(5);
+        $trashArticlesCount = Article::onlyTrashed()->count();
+        $draftsCount = Article::drafts()->count();
+        $issues = Issue::all()->pluck('title', 'id');
+
+        return view('admin.articles.drafts', compact('drafts', 'issues', 'trashArticlesCount', 'draftsCount'));
     }
 
     /**
@@ -90,8 +123,9 @@ class ArticlesAdminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Article $article)
+    public function destroy($id)
     {
+        $article = Article::findOrFail($id);
         $title = $article->title;
 
         $article->delete();
@@ -111,6 +145,13 @@ class ArticlesAdminController extends Controller
             $article->url = $request->url;
         } else {
             $article->url = str_slug($request->title);
+        }
+
+        // Determine if the article is a draft
+        if ($request->has('draft') && $request->draft) {
+            $article->draft = true;
+        } else {
+            $article->draft = false;
         }
 
         $article->title    = $request->title;
@@ -170,5 +211,21 @@ class ArticlesAdminController extends Controller
         $issues = Issue::all()->pluck('title', 'id');
 
         return view('admin.search', compact('search', 'articles', 'issues'));
+    }
+
+    /**
+     * Move an article out of the trash
+     * @param  int $id
+     * @return Redirect
+     */
+    public function unTrash($id)
+    {
+        $article = Article::withTrashed()->findOrFail($id)->restore();
+        $article = Article::findOrFail($id);
+        $article->draft = true;
+        $article->save();
+
+        return redirect()->route('admin.article.drafts')
+            ->with('message', 'L’article ' . $article->title . ' a été converti en brouillon');
     }
 }
