@@ -1,3 +1,7 @@
 .media-body p {
     margin-bottom: 0;
 }
+
+.nav-stacked > li {
+    border: 1px solid $gray-lighter;
+}
