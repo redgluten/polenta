@@ -2,6 +2,12 @@
     background-color: white;
 }
 
+// Make button span the entire width
+// to a get a larger click surface
+td > .btn {
+    width: 100%;
+}
+
 // Adapt select2 inputs to Bootstrap and custom style
 span.select2-selection.select2-selection--multiple {
     border-radius: 0;
