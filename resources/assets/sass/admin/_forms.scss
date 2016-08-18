@@ -1,3 +1,11 @@
 .form-control {
     background-color: white;
 }
+
+// Adapt select2 inputs to Bootstrap and custom style
+span.select2-selection.select2-selection--multiple {
+    border-radius: 0;
+}
+.select2-container--default .select2-search--inline .select2-search__field {
+    padding-left: 0.5rem;
+}
