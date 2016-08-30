@@ -21,7 +21,7 @@ class Tag extends Model
     public static function getCloud() : Collection
     {
         // Get occurences of each tag for the given Class
-        $occurences = \DB::table('tagging_tags')->lists('count', 'id');
+        $occurences = \DB::table('tagging_tags')->pluck('count', 'id')->all();
 
         // Total occurences of each category
         $total = array_sum($occurences);

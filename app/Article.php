@@ -142,16 +142,6 @@ class Article extends Model implements FeedItem
         return $query->whereDraft(true);
     }
 
-    /**
-     * Scope a query to filter out drafts
-     * @param  QueryBuilder $query
-     * @return QueryBuilder
-     */
-    // public function scopeNoDrafts($query)
-    // {
-    //     return $query->whereDraft(false);
-    // }
-
     // Attributes
     // ==========
 
