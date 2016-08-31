@@ -2,14 +2,19 @@
     text-transform: uppercase;
     font-size: 1.5rem;
     border: 0;
+
+    .navbar-nav li a {
+        color: $gray-darker;
+    }
 }
 
 .navbar-default .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
+    color: $gray-darker;
 
     &:hover {
-        color: #FFD73D;
+        color: $brand-warning;
     }
 }
 
