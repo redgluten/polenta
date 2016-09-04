@@ -2,39 +2,39 @@
 
     <!-- Bold -->
     <button class="edy-tb-cmd" data-wysihtml5-command="bold" title="Gras" unselectable="on">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-bold"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('bold')</span>
     </button>
 
     <!-- Italic -->
     <button class="edy-tb-cmd" data-wysihtml5-command="italic" title="Italique" unselectable="on">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-italic"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('italic')</span>
     </button>
 
     <!-- Superscript -->
     <button class="edy-tb-cmd" data-wysihtml5-command="formatInline" data-wysihtml5-command-value="sup" title="Exposant" unselectable="on">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-superscript"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('superscript')</span>
     </button>
 
     <!-- Subscript -->
     <button class="edy-tb-cmd" data-wysihtml5-command="formatInline" data-wysihtml5-command-value="sub" title="Exposant" unselectable="on">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-subscript"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('subscript')</span>
     </button>
 
     <!-- Titre -->
     <button class="edy-tb-cmd" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2" title="Titre">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-header"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('header')</span>
     </button>
 
     <!-- Brand color -->
     <button class="edy-tb-cmd" data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue" title="Couleur">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-paint-brush"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('paint-brush')</span>
     </button>
 
     <span class="editor-separator">|</span>
 
     <!-- Blockquote -->
     <button class="edy-tb-cmd" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="blockquote" title="Insérer une citation">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-quote-left"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('quote-left')</span>
     </button>
 
     <!-- Epigraph -->
@@ -69,28 +69,28 @@
 
     <!-- Text align -->
     <button class="edy-tb-cmd" data-wysihtml5-command="alignLeftStyle" data-wysihtml5-command-value="left" title="Aligner à gauche">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-align-left"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('align-left')</span>
     </button>
     <button class="edy-tb-cmd" data-wysihtml5-command="alignRightStyle" data-wysihtml5-command-value="right" title="Aligner à droite">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-align-right"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('align-right')</span>
     </button>
     <button class="edy-tb-cmd" data-wysihtml5-command="alignCenterStyle" data-wysihtml5-command-value="center" title="Centrer horizontalement">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-align-center"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('align-center')</span>
     </button>
 
     <!-- Unordered list -->
     <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="insertUnorderedList" title="Insérer une liste" unselectable="on" title="Liste">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-list"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('list')</span>
     </button>
 
     <!-- Ordered list -->
     <button class="edy-tb-cmd" data-wysihtml5-command="insertOrderedList" title="Insérer une liste numérotée" unselectable="on" title="Liste ordonnée">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-list-ol"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('list-ol')</span>
     </button>
 
     <!-- Horizontal separation -->
     <button class="edy-tb-cmd" data-wysihtml5-command="insertHTML"  data-wysihtml5-command-value="<hr>" title="Insérer une séparation horizontale" unselectable="on">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-ellipsis-h"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('ellipsis-h')</span>
     </button>
 
     <span class="editor-separator">|</span>
@@ -98,7 +98,7 @@
     <!-- Create link -->
     <div class="edy-tb-menucontainer createlink">
         <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="createLink" title="Créer un lien" unselectable="on" title="Lien">
-            <span aria-hidden="true" class="editor-button"><i class="fa fa-link"></i></span>
+            <span aria-hidden="true" class="editor-button">@icon('link')</span>
         </button>
         <div class="edy-reset edy-popover edy-itempicker" style="display: none;" data-wysihtml5-dialog="createLink">
             <div class="edy-popover-content">
@@ -115,7 +115,7 @@
 
     <!-- Remove link -->
     <button class="edy-tb-cmd" data-wysihtml5-command="removeLink" title="Supprimer le lien">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-chain-broken"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('chain-broken')</span>
     </button>
 
     @if (isset($image) && $image)
@@ -123,7 +123,7 @@
 
         <!-- Button trigger upload modal -->
         <button type="button" class="edy-tb-cmd" data-toggle="modal" data-target="#upload-modal-{{ $id }}" title="Insérer une image">
-            <span aria-hidden="true"><i class="fa fa-picture-o"></i></span>
+            <span aria-hidden="true">@icon('picture-o')</span>
         </button>
     @endif
 
@@ -131,11 +131,11 @@
 
     <!-- Undo -->
     <button class="edy-tb-cmd" data-wysihtml5-command="undo" title="Annuler la dernière action">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-undo"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('undo')</span>
     </button>
 
     <!-- Change view -->
     <button class="edy-tb-cmd" data-wysihtml5-action="change_view" data-wysihtml5-command-value="change_view" title="Passser en vue HTML">
-        <span aria-hidden="true" class="editor-button"><i class="fa fa-code"></i></span>
+        <span aria-hidden="true" class="editor-button">@icon('code')</span>
     </button>
 </div>

@@ -2,7 +2,7 @@
 
 <!-- Button trigger delete modal -->
 <a id="modal-delete-{{ $id }}" class="{{ $class or 'btn btn-danger remove' }}" data-toggle="modal" data-target="#delete-modal-{{ $id }}">
-    <i class="fa fa-trash"></i> <span class="sr-only">Supprimer</span>
+    @icon('trash') <span class="sr-only">Supprimer</span>
 </a>
 
 <div class="modal fade" id="delete-modal-{{ $id }}" tabindex="-1" role="dialog" aria-labelledby="delete-modal-label">
@@ -23,7 +23,7 @@
                     {!! Form::hidden('_method', 'DELETE') !!}
                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
                     <button type="submit" name="delete-resource-{{ $id }}" class="btn btn-danger">
-                        <span aria-hidden="true"><i class="fa fa-remove"></i></span>
+                        <span aria-hidden="true">@icon('remove')</span>
                         Supprimer
                     </button>
                 {!! Form::close() !!}

@@ -67,7 +67,7 @@ Tous les articles
                 {!! $articles->links() !!}
             @else
                 <div class="jumbotron text-center">
-                    <h1><i class="fa fa-file-text-o" aria-hidden="true"></i> Vide</h1>
+                    <h1>@icon('file-text-o') Vide</h1>
                     <p>
                         Il n’y a aucun article publié pour pour le moment<br>
                         @include('admin.partials._add-resource', ['url' => route('admin.article.create'), 'text' => 'Nouvel article'])

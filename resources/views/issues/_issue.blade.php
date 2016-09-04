@@ -14,7 +14,7 @@
                     {!! $issue->editorial_content !!}
                 @else
                     {!! str_limit($issue->editorial_content, 1400) !!}
-                    <a href="{{ route('issue.edito', $issue->id) }}">Lire la suite <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="{{ route('issue.edito', $issue->id) }}">Lire la suite @icon('arrow-right')</a>
                 @endif
             </div>
         </div>

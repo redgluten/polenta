@@ -55,7 +55,7 @@ Connexion
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i> Connexion
+                                    @icon('sign-in') Connexion
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Mot de passe oublié</a>

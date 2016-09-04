@@ -35,7 +35,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
                     <button type="submit" class="btn btn-success">
-                        <span aria-hidden="true"><i class="fa fa-upload"></i></span>
+                        <span aria-hidden="true">@icon('upload')</span>
                         Envoyer
                     </button>
                 </div>

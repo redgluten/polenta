@@ -148,7 +148,7 @@ $(document).ready(function () {
 })
 
 $('.footnote').each(function() {
-    this.append('<i class="fa fa-sticky-note" aria-hidden="true"></i>');
+    this.append('@icon('sticky-note')');
 });
 </script>
 @endpush

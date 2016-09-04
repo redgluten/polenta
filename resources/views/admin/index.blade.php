@@ -7,7 +7,7 @@ Admin accueil
 @section('content')
 <div class="container">
     <div class="jumbotron">
-        <h1 class="text-center"><i class="fa fa-gears"></i> Administration</h1>
+        <h1 class="text-center">@icon('gears') Administration</h1>
 
         <ul class="menu-page">
             @include('admin._menus-admin')
@@ -19,7 +19,7 @@ Admin accueil
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i> Articles populaires</h3>
+                    <h3 class="panel-title">@icon('line-chart') Articles populaires</h3>
                 </div>
                 <ul class="list-group">
                     @foreach ($mostReadArticles as $article)
@@ -34,7 +34,7 @@ Admin accueil
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-clock-o" aria-hidden="true"></i> Dernières modifications</h3>
+                    <h3 class="panel-title">@icon('clock-o') Dernières modifications</h3>
                 </div>
                 <ul class="list-group">
                     @foreach ($lastModifications as $article)
@@ -49,7 +49,7 @@ Admin accueil
         {{-- Backups --}}
         <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading"><i class="fa fa-download" aria-hidden="true"></i> Sauvegardes</div>
+                <div class="panel-heading">@icon('download') Sauvegardes</div>
 
                 @if ($backups->isEmpty())
                     <p class="text-muted">Aucune sauvegarde disponible pour le moment.</p>
@@ -67,7 +67,7 @@ Admin accueil
                 <footer class="panel-footer clearfix">
                     {!! Form::open(['method' => 'POST', 'route' => 'backup.run', 'class' => 'form-inline']) !!}
 
-                        <button type="submit" class="btn btn-success  pull-right"><i class="fa fa-cloud-download" aria-hidden="true"></i> Sauvegarder</button>
+                        <button type="submit" class="btn btn-success  pull-right">@icon('cloud-download') Sauvegarder</button>
 
                     {!! Form::close() !!}
                 </footer>

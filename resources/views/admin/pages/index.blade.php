@@ -19,7 +19,7 @@ Les pages
         </aside>
 
         <div class="col-md-10">
-            <h1 class="subtitle"><span aria-hidden="true"><i class="fa fa-file-o"></i></span> @yield('title')</h1>
+            <h1 class="subtitle"><span aria-hidden="true">@icon('file-o')</span> @yield('title')</h1>
 
             <!-- pages index -->
             <div class="table-responsive">

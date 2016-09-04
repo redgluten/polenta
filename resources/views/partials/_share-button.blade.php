@@ -11,7 +11,7 @@
 @endpush
 
 <a tabindex="0" href="#" id="clipboard" class="clipboard" data-clipboard-text="{{ $url }}">
-    <i class="fa fa-share-alt" aria-hidden="true"></i> Partager
+    @icon('share-alt') Partager
 </a>
 
 @push('scripts')

@@ -34,6 +34,7 @@ Polenta
 - [Color Thief PHP](https://github.com/ksubileau/color-thief-php) permet d’extraire une couleur dominante d’une image
 - [PHP Colors](https://github.com/mexitek/phpColors) petite librairie de manipulations des couleurs en PHP
 - [Laravel Backup](https://github.com/spatie/laravel-backup)
+- Adam Wathan’s [Blade SVG](https://github.com/adamwathan/blade-svg) to easily include SVG with Blade
 
 #### Dev-only
 - [Laravel debugbar](https://github.com/barryvdh/laravel-debugbar)
@@ -49,7 +50,7 @@ Polenta
 - [Bootstrap 3](http://getbootstrap.com) Framework CSS, version Sass
 - [Select2](https://github.com/select2/select2) améliore les `<select>`
 - [wysihtml](https://github.com/Voog/wysihtml) éditeur HTML
-- [Font Awesome](http://fontawesome.io) icônes d’interface
+- [Font Awesome](http://fontawesome.io) icônes d’interface (SVG version from [Font-awesome-svg-png](https://github.com/encharm/Font-Awesome-SVG-PNG))
 - [Clipboard.js](https://clipboardjs.com) pour copier vers le presse-papier
 - [Slick](https://github.com/kenwheeler/slick/) carousel
 

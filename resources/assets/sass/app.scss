@@ -2,13 +2,9 @@
 
 @import 'bootstrap';
 
-/* --- Font-Awesome --- */
-
-$fa-font-path: "../fonts/font-awesome";
-@import 'node_modules/font-awesome/scss/font-awesome.scss';
-
 /* --- Components --- */
 
+@import 'shared/icons';
 @import 'public/lists';
 @import 'shared/images';
 @import 'public/navbar';

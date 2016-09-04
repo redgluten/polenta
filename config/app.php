@@ -207,6 +207,9 @@ return [
 
         // https://github.com/spatie/laravel-backup
         Spatie\Backup\BackupServiceProvider::class,
+
+        // https://github.com/adamwathan/blade-svg
+        BladeSvg\BladeSvgServiceProvider::class,
     ],
 
     /*

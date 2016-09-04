@@ -13,7 +13,7 @@ Ajouter une page
 @section('content')
 <div class="container">
     <div class="col-md-8 col-md-offset-2">
-        <h1><span aria-hidden="true"><i class="fa fa-file-o"></i></span> @yield('title')</h1>
+        <h1><span aria-hidden="true">@icon('file-o')</span> @yield('title')</h1>
 
         {!! Form::open([
             'method' => 'POST',

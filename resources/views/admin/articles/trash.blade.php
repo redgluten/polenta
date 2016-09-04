@@ -52,7 +52,7 @@ Corbeille
 
                                 <td class="text-center">
                                     {!! Form::open(['url' => route('admin.article.untrash', $article)]) !!}
-                                        <button type="submit" id="untrash-{{ $article->id }}" class="btn btn-info"><i class="fa fa-file-o" aria-hidden="true"></i> Convertir en brouillon</button>
+                                        <button type="submit" id="untrash-{{ $article->id }}" class="btn btn-info">@icon('file-o') Convertir en brouillon</button>
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
@@ -64,7 +64,7 @@ Corbeille
                 {!! $trashedArticles->links() !!}
             @else
                 <div class="jumbotron text-center">
-                    <h1><i class="fa fa-trash" aria-hidden="true"></i> Vide</h1>
+                    <h1>@icon('trash') Vide</h1>
                     <p>Il n’y a actuellement aucun article à la corbeille.</p>
                 </div>
             @endif

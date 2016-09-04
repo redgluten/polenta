@@ -19,7 +19,7 @@
         <div class="navbar-collapse collapse" id="app-navbar-collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="{{ route('admin.index') }}"><i class="fa fa-dashboard"></i> Tableau de bord</a>
+                    <a href="{{ route('admin.index') }}">@icon('dashboard') Tableau de bord</a>
                 </li>
             </ul>
 

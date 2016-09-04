@@ -2,11 +2,6 @@
 
 @import 'bootstrap';
 
-/* --------------- Font-Awesome --------------- */
-
-$fa-font-path: "../fonts/font-awesome";
-@import 'node_modules/font-awesome/scss/font-awesome.scss';
-
 /* --------------- Wysihtml Editor --------------- */
 
 @import 'wysihtml';
@@ -18,6 +13,7 @@ $fa-font-path: "../fonts/font-awesome";
 
 /* --------------- Components --------------- */
 
+@import 'shared/icons';
 @import 'admin/navbar';
 @import 'admin/breadcrumb';
 @import 'shared/images';

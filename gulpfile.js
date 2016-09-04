@@ -18,7 +18,6 @@ var paths = {
     'bootstrap': 'node_modules/bootstrap-sass/',
     'select2': 'node_modules/select2/',
     'editor': 'node_modules/wysihtml/',
-    'fontawesome': 'node_modules/font-awesome/',
     'clipboard': 'node_modules/clipboard/',
     'espacefine': 'node_modules/espacefine/',
     'slick': 'node_modules/slick-carousel/slick/',
@@ -57,9 +56,6 @@ elixir(function(mix) {
             'resources/assets/js/admin.js'
         ], 'public/js/admin.js', './'
     );
-
-    // Fonts
-    mix.copy(paths.fontawesome + 'fonts', paths.public + 'fonts/font-awesome');
 
     // Calling Gulp task images
     mix.task('images');

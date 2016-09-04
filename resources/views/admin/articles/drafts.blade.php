@@ -67,7 +67,7 @@ Brouillons
                 {!! $drafts->links() !!}
             @else
             <div class="jumbotron text-center">
-                <h1><i class="fa fa-file-o" aria-hidden="true"></i> Vide</h1>
+                <h1>@icon('file-o') Vide</h1>
                 <p>
                     Il n’y a aucun brouillon pour pour le moment.<br>
                     @include('admin.partials._add-resource', ['url' => route('admin.article.create'), 'text' => 'Nouvel article'])

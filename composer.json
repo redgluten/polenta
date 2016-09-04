@@ -16,7 +16,8 @@
         "barryvdh/laravel-debugbar": "^2.2",
         "doctrine/dbal": "^2.5",
         "mexitek/phpcolors": "^0.4.0",
-        "spatie/laravel-backup": "^3.8"
+        "spatie/laravel-backup": "^3.8",
+        "nothingworks/blade-svg": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

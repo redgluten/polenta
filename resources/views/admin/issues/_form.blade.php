@@ -84,9 +84,9 @@
     {!! Form::label('print_file', 'Maquette au format PDF') !!}
     {!! Form::file('print_file', ['required' => 'required']) !!}
     @if (empty($issue->print_file))
-        <p class="help-block"><i class="fa fa-pdf"></i> Ajouter un fichier PDF</p>
+        <p class="help-block">@icon('file-pdf-o') Ajouter un fichier PDF</p>
     @else
-        <a href="{{ url('uploads/' . $issue->print_file) }}" target="_blank"><i class="fa fa-pdf"></i> Voir le fichier PDF actuel</a>
+        <a href="{{ url('uploads/' . $issue->print_file) }}" target="_blank">@icon('file-pdf-o') Voir le fichier PDF actuel</a>
         <p class="help-block">Changer le fichier PDF</p>
     @endif
     <small class="text-danger">{{ $errors->first('print_file') }}</small>

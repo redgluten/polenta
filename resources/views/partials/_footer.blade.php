@@ -11,15 +11,15 @@
     </nav>
 
     <nav class="nav nav-pills">
-        <a href="{{ url('/article-feed') }}"><i class="fa fa-btn fa-rss"></i> RSS</a> •
+        <a href="{{ url('/article-feed') }}">@icon('rss') RSS</a> •
 
         <!-- Authentication Links -->
         @if (auth()->check())
-            <a href="{{ route('admin.index') }}"><i class="fa fa-gears"></i> Admin</a> •
-            <a href="#"><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> •
-            <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Déconnexion</a>
+            <a href="{{ route('admin.index') }}">@icon('gears') Admin</a> •
+            <a href="#">@icon('user') {{ Auth::user()->name }}</a> •
+            <a href="{{ url('/logout') }}">@icon('sign-out') Déconnexion</a>
         @else
-            <a href="{{ url('/login') }}"><i class="fa fa-sign-in"></i> Connexion</a>
+            <a href="{{ url('/login') }}">@icon('sign-in') Connexion</a>
         @endif
     </nav>
 </footer>

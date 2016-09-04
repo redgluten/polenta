@@ -14,7 +14,7 @@ Modifier la page {{ $page->title }}
 <div class="container">
     <div class="col-sm-8 col-sm-offset-2">
 
-        <h1><span aria-hidden="true"><i class="fa fa-pencil-square-o"></i></span> @yield('title')</h1>
+        <h1><span aria-hidden="true">@icon('pencil-square-o')</span> @yield('title')</h1>
 
         {!! Form::model($page, [
             'route'  => ['admin.page.update', $page->id],

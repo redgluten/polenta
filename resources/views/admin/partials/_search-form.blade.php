@@ -19,7 +19,7 @@
         <small class="text-danger">{{ $errors->first('search') }}</small>
     </div>
 
-    <button type="submit" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i> Rechercher</button>
+    <button type="submit" class="btn btn-info">@icon('search') Rechercher</button>
 
 {!! Form::close() !!}
 
