@@ -23,10 +23,10 @@ Polenta
 
 > **Note :** [Composer](https://getcomposer.org) est utilisé pour la gestion des dépendances PHP. La liste complète des dépendances doit donc se trouver dans le fichier `/.composer.json` à la racine du projet. La liste suivante devrait cependant être tenue à jour pour rappeler l’utilité de chacune d’entre elles et fournir un lien vers son éventuelle documentation.
 
-- Framework back-end : [Laravel 5.2](http://laravel.com), [Documentation](http://laravel.com/docs/5.2)
+- Framework back-end : [Laravel 5.3](http://laravel.com), [Documentation](http://laravel.com/docs/5.3)
 - [Doctrine/DBAL](https://github.com/doctrine/dbal) est nécessaire pour modifier les colonnes MySQL
 - [Laravel Collective HTML & Forms](http://laravelcollective.com/docs/5.2/html) pour la gestion des formulaires
-- [Laravel Exceptions](https://github.com/GrahamCampbell/Laravel-Exceptions) améliore la gestion des erreurs 
+- [Laravel Exceptions](https://github.com/GrahamCampbell/Laravel-Exceptions) améliore la gestion des erreurs
 - [Intervention Image](https://github.com/Intervention/image) gestion des images
 - [Laravel Tagging](https://github.com/rtconner/laravel-tagging) gestion des tags
 - [Mews Purifier](https://github.com/mewebstudio/Purifier) pour le nettoyage du code HTML dans les champs de formulaires
@@ -37,7 +37,7 @@ Polenta
 
 #### Dev-only
 - [Laravel debugbar](https://github.com/barryvdh/laravel-debugbar)
- 
+
 
 ### Front-end
 
@@ -78,7 +78,7 @@ Les fonctions de base sont assez simples à mettre en œuvre : se référer à l
 
 Un fichier `editor.css` avec les styles nécessaires est généré pour que les modifications soient visibles dans l’éditeur lui-même, il est à renseigner dans l’activation de chaque éditeur. Voir exemple plus bas.
 
-Pour activer un éditeur il faut inclure le partial de vue `_toolbar` juste au dessus du champ textarea en lui passant l’`id` de celui-ci et activer l’éditeur à l’aide des fonctions prévues par le plugin. 
+Pour activer un éditeur il faut inclure le partial de vue `_toolbar` juste au dessus du champ textarea en lui passant l’`id` de celui-ci et activer l’éditeur à l’aide des fonctions prévues par le plugin.
 
 L’upload d’image est géré différemment des autres éléments qui se contentent d’utiliser les fonctions natives du plugin : il faut préciser au partial de vue `_toolbar` que l’on souhaite utiliser une image en lui passant une variable `image` à `true` et inclure en fin de vue le partial de vue contenant la modal Boostrap permettant l’upload d’images pour chaque éditeur.
 
