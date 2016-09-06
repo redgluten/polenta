@@ -51,18 +51,20 @@ Admin accueil
             <div class="panel panel-default">
                 <div class="panel-heading">@icon('download') Sauvegardes</div>
 
-                @if ($backups->isEmpty())
-                    <p class="text-muted">Aucune sauvegarde disponible pour le moment.</p>
-                @else
                 <ul class="list-group">
+                @if ($backups->isEmpty())
+                    <li class="list-group-item text-muted">Aucune sauvegarde disponible pour le moment.</li>
+                @else
                     @foreach ($backups as $name => $size)
-                        <a class="list-group-item" href="{{ route('backups.download', $name) }}">
-                            <h6 class="list-group-item-heading">{{ $name }}</h6>
-                            <p class="list-group-item-text">{{ $size }}</p>
-                        </a>
+                        <li class="list-group-item">
+                            <a href="{{ route('backups.download', $name) }}">
+                                <h6 class="list-group-item-heading">{{ $name }}</h6>
+                                <p class="list-group-item-text">{{ $size }}</p>
+                            </a>
+                        </li>
                     @endforeach
-                </ul>
                 @endif
+                </ul>
 
                 <footer class="panel-footer clearfix">
                     {!! Form::open(['method' => 'POST', 'route' => 'backup.run', 'class' => 'form-inline']) !!}
