@@ -2,12 +2,13 @@
 
 namespace App\Providers;
 
-use Cache;
-use Schema;
-use App\Page;
-use App\Issue;
 use App\Friend;
+use App\Issue;
+use App\Page;
+use Cache;
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
+use Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(\Faker\Generator::class, function () {
             return \Faker\Factory::create('fr_FR');
         });
+
+        // Set Carbon and PHP locale to the current app locale
+        Carbon::setLocale(config('app.locale'));
+        setlocale(LC_TIME, 'fr_FR.utf8');
 
         view()->share('polenta', 'Polenta&#xA0;! Le journal qui ne rend pas i-Diot');
         view()->share('slogan', 'Enquête • Jeux • Poésie • Reportages • Dessin • Théâtre');
