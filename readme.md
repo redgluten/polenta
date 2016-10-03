@@ -53,6 +53,7 @@ Polenta
 - [Font Awesome](http://fontawesome.io) icônes d’interface (SVG version from [Font-awesome-svg-png](https://github.com/encharm/Font-Awesome-SVG-PNG))
 - [Clipboard.js](https://clipboardjs.com) pour copier vers le presse-papier
 - [Slick](https://github.com/kenwheeler/slick/) carousel
+- [Leaflet](http://leafletjs.com) pour les cartes de géolocalisation
 
 #### Fontes
 

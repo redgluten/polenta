@@ -1,7 +1,7 @@
 <div id="map" class="map"></div>
 
 @push('styles')
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
     <style>
         .map {
             height: 400px;
@@ -12,7 +12,7 @@
 
 @push('scripts')
 <!-- Leaflet library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 
 <script type="text/javascript">
     var locations = {!! $locations !!};
