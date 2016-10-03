@@ -84,7 +84,7 @@
             <div class="col-md-8">
                 <div class="form-group{{ $errors->has('logo') ? ' has-error' : '' }}">
                     <p class="help-block">Changer le logo actuel</p>
-                    {!! Form::file('logo') !!}
+                    {!! Form::file('logo', ['class' => 'form-control-file']) !!}
                 </div>
                 <div class="form-group{{ $errors->has('logo_caption') ? ' has-error' : '' }}">
                     {!! Form::label('logo_caption', 'Légende & crédits') !!}
@@ -107,11 +107,6 @@
     <script type="text/javascript">
         $('#issue_id').select2({
             allowClear: true,
-        });
-
-        $('#user_list').select2({
-            placeholder: 'Ajouter un ou plusieurs auteur(s)',
-            allowClear: true
         });
 
         $('#tag_list').select2({

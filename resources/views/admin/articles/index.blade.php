@@ -35,7 +35,7 @@ Tous les articles
                             <tr>
                                 <th>Logo</th>
                                 <th>Title</th>
-                                <th>Numéro</a></th>
+                                <th>Numéro</th>
                                 <th>Modifier</th>
                                 <th>Corbeille</th>
                             </tr>
