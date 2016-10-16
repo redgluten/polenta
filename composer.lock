@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b65b4ef83c86004ea18eebcbb1cf2a4e",
-    "content-hash": "ac0cb87c3c2e56d10162bfa0753f0915",
+    "hash": "b8f5bf520e8a178f5390bf91e0834016",
+    "content-hash": "4035be4170ee963b02eb8f0684da9a47",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1637,16 +1637,16 @@
         },
         {
             "name": "nothingworks/blade-svg",
-            "version": "dev-master",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/adamwathan/blade-svg.git",
-                "reference": "49ea50f2b6a3a76267b5c6d7c432b1cb55a673ed"
+                "reference": "0002112f8ccd79b23451958e9e5a3fa03585a035"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adamwathan/blade-svg/zipball/49ea50f2b6a3a76267b5c6d7c432b1cb55a673ed",
-                "reference": "49ea50f2b6a3a76267b5c6d7c432b1cb55a673ed",
+                "url": "https://api.github.com/repos/adamwathan/blade-svg/zipball/0002112f8ccd79b23451958e9e5a3fa03585a035",
+                "reference": "0002112f8ccd79b23451958e9e5a3fa03585a035",
                 "shasum": ""
             },
             "require": {
@@ -1676,7 +1676,7 @@
                     "email": "adam.wathan@gmail.com"
                 }
             ],
-            "time": "2016-10-11 21:02:07"
+            "time": "2016-09-05 14:37:45"
         },
         {
             "name": "paragonie/random_compat",
@@ -4522,9 +4522,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "nothingworks/blade-svg": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
