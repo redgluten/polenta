@@ -58,6 +58,62 @@ return [
         ],
     ],
 
+    /*
+     * You can get notified when specific events occur. Out of the box you can use 'mail' and 'slack'.
+     * For Slack you need to install guzzlehttp/guzzle.
+     *
+     * You can also use your own notification classes, just make sure the class is named after one of
+     * the `Spatie\Backup\Events` classes.
+     */
+    'notifications' => [
+
+        'notifications' => [
+            \Spatie\Backup\Notifications\Notifications\BackupHasFailed::class         => ['mail'],
+            \Spatie\Backup\Notifications\Notifications\UnhealthyBackupWasFound::class => ['mail'],
+            \Spatie\Backup\Notifications\Notifications\CleanupHasFailed::class        => ['mail'],
+            \Spatie\Backup\Notifications\Notifications\BackupWasSuccessful::class     => ['mail'],
+            \Spatie\Backup\Notifications\Notifications\HealthyBackupWasFound::class   => ['mail'],
+            \Spatie\Backup\Notifications\Notifications\CleanupWasSuccessful::class    => ['mail'],
+        ],
+
+        /*
+         * Here you can specify the notifiable to which the notifications should be sent. The default
+         * notifiable will use the variables specified in this config file.
+         */
+        'notifiable' => \Spatie\Backup\Notifications\Notifiable::class,
+
+        'mail' => [
+            'to' => 'your@email.com',
+        ],
+
+        'slack' => [
+            'webhook_url' => '',
+        ],
+    ],
+
+    /*
+     * Here you can specify which backups should be monitored.
+     * If a backup does not meet the specified requirements the
+     * UnHealthyBackupWasFound-event will be fired.
+     */
+    'monitorBackups' => [
+        [
+            'name' => env('APP_URL'),
+            'disks' => ['local'],
+            'newestBackupsShouldNotBeOlderThanDays' => 1,
+            'storageUsedMayNotBeHigherThanMegabytes' => 5000,
+        ],
+
+        /*
+        [
+            'name' => 'name of the second app',
+            'disks' => ['local', 's3'],
+            'newestBackupsShouldNotBeOlderThanDays' => 1,
+            'storageUsedMayNotBeHigherThanMegabytes' => 5000,
+        ],
+        */
+    ],
+
     'cleanup' => [
         /*
          * The strategy that will be used to cleanup old backups.
@@ -123,56 +179,4 @@ return [
         ],
         */
     ],
-
-    'notifications' => [
-
-        /*
-         * This class will be used to send all notifications.
-         */
-        'handler' => Spatie\Backup\Notifications\Notifier::class,
-
-        /*
-         * Here you can specify the ways you want to be notified when certain
-         * events take place. Possible values are "log", "mail", "slack" and "pushover".
-         *
-         * Slack requires the installation of the maknz/slack package.
-         */
-        'events' => [
-            'whenBackupWasSuccessful'     => ['log'],
-            'whenCleanupWasSuccessful'    => ['log'],
-            'whenHealthyBackupWasFound'   => ['log'],
-            'whenBackupHasFailed'         => ['log', 'mail'],
-            'whenCleanupHasFailed'        => ['log', 'mail'],
-            'whenUnhealthyBackupWasFound' => ['log', 'mail'],
-        ],
-
-        /*
-         * Here you can specify how emails should be sent.
-         */
-        'mail' => [
-            'from' => 'your@email.com',
-            'to'   => 'your@email.com',
-        ],
-
-        /*
-         * Here you can specify how messages should be sent to Slack.
-         */
-        'slack' => [
-            'channel'  => '#backups',
-            'username' => 'Backup bot',
-            'icon'     => ':robot:',
-        ],
-
-        /*
-         * Here you can specify how messages should be sent to Pushover.
-         */
-        'pushover' => [
-            'token'  => env('PUSHOVER_APP_TOKEN'),
-            'user'   => env('PUSHOVER_USER_KEY'),
-            'sounds' => [
-                'success' => env('PUSHOVER_SOUND_SUCCESS','pushover'),
-                'error'   => env('PUSHOVER_SOUND_ERROR','siren'),
-            ],
-        ],
-    ]
 ];
