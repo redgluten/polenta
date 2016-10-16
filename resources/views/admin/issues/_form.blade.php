@@ -92,6 +92,8 @@
     <small class="text-danger">{{ $errors->first('print_file') }}</small>
 </div>
 
+@include('partials._forms-errors')
+
 @push('scripts')
 <script type="text/javascript">
     // activate wysihtml editors
