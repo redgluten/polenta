@@ -47,8 +47,8 @@ class SaveIssueRequest extends Request
         ];
 
         // Exclude existing model from uniqueness validation on PUT
-        if (in_array($this->method, ['PUT', 'PATCH'])) {
-            $rules['number'] .= ',' . $this->route()->parameter('issue');
+        if (in_array($this->method(), ['PUT', 'PATCH'])) {
+            $rules['number'] .= ',' . $this->route()->parameters()['issue'];
         }
 
         return $rules;

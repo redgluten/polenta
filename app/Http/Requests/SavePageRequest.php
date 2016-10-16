@@ -34,7 +34,7 @@ class SavePageRequest extends Request
     public function rules() : array
     {
         $rules = [
-            'title'                     => 'required|string|max:255',
+            'title'                     => 'required|string|max:255|unique:pages,title',
             'url'                       => 'alpha_dash|max:255',
             'content'                   => 'required',
             'display_in_menu'           => 'boolean',
@@ -42,9 +42,9 @@ class SavePageRequest extends Request
         ];
 
         // Exclude existing model from uniqueness validation on PUT
-        if ($this->method() === 'PUT') {
-            $rules ['title'] .= '|unique:pages,title,' . $this->route()->parameter('page');
-            $rules ['url']   .= '|unique:pages,url,' . $this->route()->parameter('page');
+        if (in_array($this->method(), ['PUT', 'PATCH'])) {
+            $rules ['title'] .= ',' . $this->route()->parameters()['page'];;
+            $rules ['url']   .= '|unique:pages,url,' . $this->route()->parameters()['page'];;
         }
 
         return $rules;
