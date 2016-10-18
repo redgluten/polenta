@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
         // Send Logs via email
         $schedule->call(function() {
             \Mail::queue('emails.logs', [], function($message) {
-                $message->to(config('CONTACT_EMAIL'), config('CONTACT_NAME'))->subject('Polenta - Logs générés pour le ' . date('d/m/Y'));
+                $message->to(config('mail.from.address'), config('mail.from.name'))->subject('Polenta - Logs générés pour le ' . date('d/m/Y'));
 
                 $message->attach(storage_path() . '/logs/laravel-' . date('Y-m-d') . '.log');
             });
